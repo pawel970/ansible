@@ -1,4 +1,4 @@
-- hosts: 192.168.0.41
+- hosts: wazuh-it-master
   tasks:
    - name: Touch a file, using symbolic modes to set the permissions (equivalent to 0644)
      ansible.builtin.file:
