@@ -1,6 +1,6 @@
 - hosts: wazuh-it-master
   gather_facts: yes
-  become: yes
+  become: true
 
   tasks:
   - name: Install fusion
