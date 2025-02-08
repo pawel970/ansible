@@ -1,0 +1,25 @@
+- hosts: wazuh-it-master
+  gather_facts: yes
+  become: yes
+
+  tasks:
+  - name: Install fusion
+    dnf:
+      name: "{{ item }}"
+      state: latest
+      disable_gpg_check: true
+    loop:
+      - "https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ansible_distribution_major_version}}.noarch.rpm"
+      - "https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-9.noarch.rpm"
+      - "https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-9.noarch.rpm"
+
+  - name: Install rpms
+    dnf:
+      name: "{{ item }}"
+      state: latest
+      disable_gpg_check: true
+    loop:
+      - "mc"
+      - "net-tools"
+      - "lynx"
+      - "wget"
