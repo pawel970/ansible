@@ -1,4 +1,4 @@
-- hosts: an1
+- hosts: 192.168.0.41
   tasks:
    - name: Touch a file, using symbolic modes to set the permissions (equivalent to 0644)
      ansible.builtin.file:
